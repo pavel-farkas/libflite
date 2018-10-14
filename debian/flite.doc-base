@@ -1,0 +1,12 @@
+Document: flite
+Title:  Flite: a small, fast speech synthesis engine
+Author: Alan W Black and Kevin A. Lenzo from the Speech Group at Carnegie Mellon University
+Abstract: This documentation describes how to use flite.
+Section: Accessibility
+
+Format: PDF
+Files: /usr/share/doc/flite/flite.pdf.gz
+
+Format: HTML
+Files: /usr/share/doc/flite/html/*.html
+Index: /usr/share/doc/flite/html/index.html
