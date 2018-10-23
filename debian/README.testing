@@ -1,0 +1,3 @@
+flite simply takes text as input. This should emit speak:
+
+echo 'Hello, world!' | flite

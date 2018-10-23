@@ -1,9 +1,6 @@
-libflite for Debian
--------------------
+Backporting
+===========
 
-<this file describes information about the source package, see Debian policy
-manual section 4.14. You WILL either need to modify or delete this file>
-
-
-
-
+texi2any is relatively recent in texinfo.  To backport to a distribution which
+doesn't have texinfo >= 5.2, simply drop texi2html_to_texi2any_migration.patch
+in from patch/series, remove the version in the texinfo dependency, and add the texi2html dependency.
