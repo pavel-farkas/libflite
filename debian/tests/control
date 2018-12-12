@@ -1,0 +1,2 @@
+Depends: flite
+Test-Command: echo "Hello, world!" | flite -o $AUTOPKGTEST_TMP/output.wav && diff $AUTOPKGTEST_TMP/output.wav debian/tests/output.wav

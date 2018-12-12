@@ -1,14 +1,13 @@
 Source: flite
 Section: sound
 Priority: optional
-Maintainer: Debian Accessibility Team <debian-accessibility@lists.debian.org>
+Maintainer: Debian Accessibility Team <pkg-a11y-devel@lists.alioth.debian.org>
 Uploaders:
  Lukas Loehrer <loehrerl@gmx.net>,
+ Paul Gevers <elbrus@debian.org>,
  Samuel Thibault <sthibault@debian.org>
 Build-Depends:
- autoconf,
- autotools-dev,
- debhelper (>= 9), dh-autoreconf,
+ debhelper (>= 11~),
  dpkg-dev (>= 1.16.1~),
  ed,
  libasound2-dev [linux-any],
@@ -16,10 +15,11 @@ Build-Depends:
  texlive
 Build-Conflicts:
  autoconf2.13
-Standards-Version: 3.9.8
+Standards-Version: 4.2.0
 Homepage: http://www.speech.cs.cmu.edu/flite
-VCS-git: git://anonscm.debian.org/pkg-a11y/flite.git
-VCS-browser: https://anonscm.debian.org/gitweb/?p=pkg-a11y/flite.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-a11y/flite.git
+Vcs-Browser: https://anonscm.debian.org/git/pkg-a11y/flite.git
+Rules-Requires-Root: no
 
 Package: flite
 Architecture: any
@@ -27,8 +27,6 @@ Depends:
  libflite1 (= ${binary:Version}),
  ${misc:Depends},
  ${shlibs:Depends}
-Suggests:
- alsa-base [linux-any]
 Description: Small run-time speech synthesis engine
  Flite is a small fast run-time speech synthesis engine.  It is the
  latest addition to the suite of free software synthesis tools
@@ -50,8 +48,6 @@ Depends:
  ${shlibs:Depends}
 Pre-Depends:
  ${misc:Pre-Depends}
-Suggests:
- alsa-base [linux-any]
 Description: Small run-time speech synthesis engine - shared libraries
  Flite is a small fast run-time speech synthesis engine.  It is the
  latest addition to the suite of free software synthesis tools

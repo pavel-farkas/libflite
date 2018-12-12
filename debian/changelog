@@ -1,8 +1,57 @@
-flite (2.0.0~999) unstable; urgency=low
+flite (2.1-release-3) unstable; urgency=medium
 
-  * Import Debian package
+  * control: Bump Standards-Version to 4.2.0 (no changes).
+  * tests/control: Add autopkgtest.
+  * patches/64bit: Fix 64bit detection (Closes: Bug#910792).
 
- -- FreeSWITCH Solutions <packages@freeswitch.com>  Fri, 09 Feb 2018 12:50:37 +0200
+ -- Samuel Thibault <sthibault@debian.org>  Sun, 21 Oct 2018 14:47:25 +0200
+
+flite (2.1-release-2) unstable; urgency=medium
+
+  [ Samuel Thibault ]
+  * debian/patches/example_fix: Fix provided example (Closes: Bug#890941).
+  * Bump Standards-Version to 4.1.4 (no changes).
+
+  [ Aurelien Jarno ]
+  * Update config.guess before running make clean which happens to call it
+    (Closes: Bug#895608).
+
+ -- Samuel Thibault <sthibault@debian.org>  Sun, 29 Apr 2018 12:09:56 +0200
+
+flite (2.1-release-1) unstable; urgency=medium
+
+  [ Samuel Thibault ]
+  * control: Bump Standards-Version to 4.1.1 (no changes).
+
+  [ Paul Gevers ]
+  * New upstream release
+  * control: Bump Standards-Version to 4.1.3 (no changes).
+  * Add myself to uploaders
+  * Bump dephelper compat level to 11
+  * Add Rules-Requires-Root: no
+  * Update link_deps.patch for new libraries in 2.0 release
+  * Remove duplicate symbol for libflite_cmu_indic_lex.so.1 since we now
+    link properly
+  * Update symbols file with new (and dropped, unused in Debian, ewh) symbols
+  * Simplify clean target in d/rules
+  * Add typos-found-by-lintian.patch
+
+ -- Paul Gevers <elbrus@debian.org>  Wed, 17 Jan 2018 22:07:52 +0100
+
+flite (2.0.0-release-4) unstable; urgency=medium
+
+  [ Samuel Thibault ]
+  * Use canonical anonscm vcs URL.
+  * control: Update maintainer mailing list.
+  * control: Remove suggestion of alsa-base, replaced by kmod
+    (Closes: Bug#858207, Bug#858208).
+  * Re-enable PIE, now working (Closes: Bug#865600).
+
+  [ Paul Gevers ]
+  * Keep hardening enabled
+  * Reorder d/watch in the hope udd.d.o reports the current version
+
+ -- Paul Gevers <elbrus@debian.org>  Fri, 14 Jul 2017 22:20:44 +0200
 
 flite (2.0.0-release-3) unstable; urgency=medium
 
