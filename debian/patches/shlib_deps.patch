@@ -1,5 +1,7 @@
 Author: Samuel Thibault <sthibault@debian.org>
 Bugs-Debian: https://bugs.debian.org/577335
+Forwarded: https://github.com/festvox/flite/pull/5
+
 diff --git a/config/common_make_rules b/config/common_make_rules
 index fc5a79f..34b0490 100644
 --- a/config/common_make_rules

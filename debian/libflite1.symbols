@@ -35,12 +35,15 @@ libflite.so.1 libflite1 #MINVER#
  cg_db_val@Base 1.4-release-9~
  cg_duration@Base 1.4-release-9~
  cg_find_phrase_number@Base 1.4-release-9~
+ cg_init_lang_lex@Base 2.1-release
  cg_is_pau@Base 1.4-release-9~
  cg_phone_index@Base 1.4-release-9~
  cg_phone_place@Base 1.4-release-9~
  cg_phone_rindex@Base 1.4-release-9~
  cg_phrase_ratio@Base 2.0.0-release
+ cg_position_in_phrase@Base 2.1-release
  cg_position_in_phrasep@Base 1.4-release-9~
+ cg_position_in_sentence@Base 2.1-release
  cg_state_index@Base 1.4-release-9~
  cg_state_place@Base 1.4-release-9~
  cg_state_pos@Base 1.4-release-9~
@@ -97,11 +100,14 @@ libflite.so.1 libflite1 #MINVER#
  cst_rateconv_in@Base 1.4-release-9~
  cst_rateconv_leadout@Base 1.4-release-9~
  cst_rateconv_out@Base 1.4-release-9~
- cst_read_2d_array@Base 2.0.0-release
- cst_read_array@Base 2.0.0-release
+ cst_read_2d_double_array@Base 2.1-release
+ cst_read_2d_float_array@Base 2.1-release
+ cst_read_2d_ushort_array@Base 2.1-release
  cst_read_db_types@Base 2.0.0-release
+ cst_read_double_array@Base 2.1-release
  cst_read_dur_stats@Base 2.0.0-release
  cst_read_float@Base 2.0.0-release
+ cst_read_float_array@Base 2.1-release
  cst_read_int@Base 2.0.0-release
  cst_read_padded@Base 2.0.0-release
  cst_read_part_file@Base 1.4-release-9~
@@ -111,6 +117,7 @@ libflite.so.1 libflite1 #MINVER#
  cst_read_tree_array@Base 2.0.0-release
  cst_read_tree_feats@Base 2.0.0-release
  cst_read_tree_nodes@Base 2.0.0-release
+ cst_read_ushort_array@Base 2.1-release
  cst_read_voice_feature@Base 2.0.0-release
  cst_read_whole_file@Base 1.4-release-9~
  cst_regex_init@Base 1.4-release-9~
@@ -344,6 +351,8 @@ libflite.so.1 libflite1 #MINVER#
  item_feat_remove@Base 1.4-release-9~
  item_feat_string@Base 1.4-release-9~
  item_feats@Base 1.4-release-9~
+ item_first@Base 2.1-release
+ item_last@Base 2.1-release
  item_last_daughter@Base 1.4-release-9~
  item_next@Base 1.4-release-9~
  item_nth_daughter@Base 1.4-release-9~
@@ -461,7 +470,9 @@ libflite.so.1 libflite1 #MINVER#
  ts_open_string@Base 1.4-release-9~
  ts_read@Base 1.4-release-9~
  ts_set_stream_pos@Base 1.4-release-9~
+ ts_utf8_sequence_length@Base 2.1-release
  userdata_val@Base 1.4-release-9~
+ utf8_sequence_length@Base 2.1-release
  utt_init@Base 1.4-release-9~
  utt_input_text@Base 1.4-release-9~
  utt_relation@Base 1.4-release-9~
@@ -633,9 +644,15 @@ libflite_cmu_indic_lang.so.1 libflite1 #MINVER#
  cmu_indic_phoneset@Base 2.0.0-release
  cmu_indic_phrasing_cart@Base 2.0.0-release
  cmu_indic_tokentowords@Base 2.0.0-release
+ cst_rx_eng_digits_only@Base 2.1-release
+ cst_rx_indic_eng_number@Base 2.1-release
  cst_rx_not_indic@Base 2.0.0-release
+ indic_digit_to_offset@Base 2.1-release
+ indic_number@Base 2.1-release
+ indic_number_indiv@Base 2.1-release
  indic_postpunctuationsymbols@Base 2.0.0-release
  indic_utt_break@Base 2.0.0-release
+ is_english@Base 2.1-release
 libflite_cmu_indic_lex.so.1 libflite1 #MINVER#
  cmu_indic_assign_lex_stress@Base 2.0.0-release
  cmu_indic_lex@Base 2.0.0-release
@@ -643,9 +660,9 @@ libflite_cmu_indic_lex.so.1 libflite1 #MINVER#
  cmu_indic_lex_lts_function@Base 2.0.0-release
  cmu_indic_lex_nasal_postfixes@Base 2.0.0-release
  cmu_indic_lex_ord_to_phones@Base 2.0.0-release
+ cmu_indic_lex_tamil_voicing_postfixes@Base 2.1-release
  cmu_indic_postlex@Base 2.0.0-release
  cmu_indic_syl_boundary@Base 2.0.0-release
- cst_rx_not_indic@Base 2.0.0-release
  indic_char@Base 2.0.0-release
  map_english_to_indic_phones@Base 2.0.0-release
 libflite_cmu_time_awb.so.1 libflite1 #MINVER#
@@ -32117,6 +32134,7 @@ libflite_cmu_us_awb.so.1 libflite1 #MINVER#
  cmu_us_awb_r_ps@Base 1.4-release-9~
  cmu_us_awb_s_ps@Base 1.4-release-9~
  cmu_us_awb_sh_ps@Base 1.4-release-9~
+ cmu_us_awb_single_f0_carts@Base 2.1-release
  cmu_us_awb_single_mcep_aa_1_cart@Base 1.4-release-9~
  cmu_us_awb_single_mcep_aa_2_cart@Base 1.4-release-9~
  cmu_us_awb_single_mcep_aa_3_cart@Base 1.4-release-9~
@@ -32456,6 +32474,7 @@ libflite_cmu_us_rms.so.1 libflite1 #MINVER#
  cmu_us_rms_r_ps@Base 1.4-release-9~
  cmu_us_rms_s_ps@Base 1.4-release-9~
  cmu_us_rms_sh_ps@Base 1.4-release-9~
+ cmu_us_rms_single_f0_carts@Base 2.1-release
  cmu_us_rms_single_mcep_aa_1_cart@Base 1.4-release-9~
  cmu_us_rms_single_mcep_aa_2_cart@Base 1.4-release-9~
  cmu_us_rms_single_mcep_aa_3_cart@Base 1.4-release-9~
@@ -32776,6 +32795,7 @@ libflite_cmu_us_slt.so.1 libflite1 #MINVER#
  cmu_us_slt_r_ps@Base 1.4-release-9~
  cmu_us_slt_s_ps@Base 1.4-release-9~
  cmu_us_slt_sh_ps@Base 1.4-release-9~
+ cmu_us_slt_single_f0_carts@Base 2.1-release
  cmu_us_slt_single_mcep_aa_1_cart@Base 1.4-release-9~
  cmu_us_slt_single_mcep_aa_2_cart@Base 1.4-release-9~
  cmu_us_slt_single_mcep_aa_3_cart@Base 1.4-release-9~
@@ -32956,6 +32976,7 @@ libflite_usenglish.so.1 libflite1 #MINVER#
  fsm_transition@Base 1.4-release-9~
  hasvowel@Base 1.4-release-9~
  illion@Base 1.4-release-9~
+ leadingzerodigits@Base 2.1-release
  numbertime@Base 1.4-release-9~
  numbertimexm@Base 1.4-release-9~
  numess@Base 1.4-release-9~

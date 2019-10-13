@@ -1,3 +1,7 @@
+Description: We want to show what we are doing so that everybody can understand
+ the logs.
+Forwarded: not needed
+
 --- a/config/common_make_rules
 +++ b/config/common_make_rules
 @@ -108,13 +108,13 @@ $(OBJDIR)/%.os : %.c

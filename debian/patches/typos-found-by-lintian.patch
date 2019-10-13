@@ -1,0 +1,16 @@
+Description: Lintian found a typo
+Author: Paul Gevers <elbrus@debian.org>
+
+Index: flite/lang/cmu_indic_lex/cmu_indic_lex.c
+===================================================================
+--- flite.orig/lang/cmu_indic_lex/cmu_indic_lex.c
++++ flite/lang/cmu_indic_lex/cmu_indic_lex.c
+@@ -1286,7 +1286,7 @@ cst_val *cmu_indic_lex_lts_function(cons
+     }
+ 
+     if (cst_streq(indic_variant,"tam")){
+-       printf("Tamil doesnt have anuswara");
++       printf("Tamil doesn't have anuswara");
+     } 
+     else
+     cmu_indic_lex_nasal_postfixes(base_phones);

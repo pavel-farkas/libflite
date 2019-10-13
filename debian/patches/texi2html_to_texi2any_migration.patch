@@ -1,6 +1,8 @@
 Description: Debian wants to get rid of texi2html, see
  https://wiki.debian.org/Texi2htmlTransition
 Author: Paul Gevers <elbrus@debian.org>
+Forwarded: https://github.com/festvox/flite/pull/4
+
 --- a/doc/Makefile
 +++ b/doc/Makefile
 @@ -50,7 +50,7 @@

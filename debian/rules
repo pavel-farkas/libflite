@@ -1,24 +1,9 @@
 #!/usr/bin/make -f
 
-# get debian distribution codename
-DISTRIBUTION=$(shell lsb_release -sc)
-# get version from changelog, for string mangling
-VERSION=$(shell dpkg-parsechangelog --count 1 --show-field Version)
-# add distribution codename to package version
-PACKAGEVERSION=$(subst ~,~$(DISTRIBUTION)-,$(VERSION))
-
 %:
-	dh $@ --with autoreconf
+	dh $@
 
-# setting mangled package version
-override_dh_gencontrol:
-	dh_gencontrol -- -v$(PACKAGEVERSION)
-
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all,-pie
-# -fPIE doesn't work, but at least get -fPIC as we used to have with
-# hardening-wrapper
-export DEB_CFLAGS_MAINT_APPEND = -no-pie -fno-pie -fno-PIE -fPIC
-export DEB_CXXFLAGS_MAINT_APPEND = -no-pie -fno-pie -fno-PIE -fPIC
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 #fix FTBFS with binutils-gold
 export DEB_LDFLAGS_MAINT_APPEND = -lm
 
@@ -32,6 +17,10 @@ else
 AUDIO=oss
 endif
 
+override_dh_auto_clean:
+	dh_update_autotools_config
+	[ ! -f config.log ] || dh_auto_clean
+
 override_dh_auto_configure:
 	dh_auto_configure -- --with-audio=$(AUDIO) \
 		--with-vox=cmu_us_kal16 --enable-shared
@@ -39,24 +28,6 @@ override_dh_auto_configure:
 override_dh_auto_build:
 	$(MAKE)
 	(set -e; cd doc; $(MAKE) flite.pdf flite.html; makeinfo flite.texi)
-
-override_dh_auto_clean:
-	for i in aux cp dvi fn info ky log pdf pg ps toc tp vr; do \
-		rm -f doc/flite.$$i; \
-	done
-
-	rm -Rf doc/html
-	rm -rf build/
-	rm -rf lib/
-	rm -rf bin/
-	rm -f config.log
-	rm -f config.status
-	rm -f config.cache
-	rm -f config/config
-	rm -f config/system.mak
-	rm -f include/flite_version.h
-	rm -f configure
-	rm -f main/flite_voice_list.c
 
 override_dh_install:
 	dh_install
